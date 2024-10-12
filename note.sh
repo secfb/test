@@ -1,5 +1,7 @@
 Get-Content .\hostnames.txt | ForEach-Object { Resolve-DnsName $_ -Type A | Select-Object -ExpandProperty IPAddress }
 
+Get-Content "C:\Scripts\netbios_names.txt" | ForEach-Object { "$_ : $([System.Net.Dns]::GetHostAddresses($_) | Where-Object { $_.AddressFamily -eq 'InterNetwork' } | Select-Object -First 1).IPAddressToString" } | Out-File "C:\Scripts\hostname_ip_addresses.txt"
+
 sudo timedatectl set-ntp off;sudo timedatectl set-timezone Asia/Istanbul ;date;timedatectl
 
 echo "ssh id_rsa.pub" >> ~/.ssh/authorized_keys
