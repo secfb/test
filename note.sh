@@ -7,3 +7,6 @@ sudo timedatectl set-ntp off;sudo timedatectl set-timezone Asia/Istanbul ;date;t
 echo "ssh id_rsa.pub" >> ~/.ssh/authorized_keys
 
 ssh-keygen -t rsa -b 4096
+
+
+  | tee -a /opt/nessus/etc/nessus/nessusd.rules
