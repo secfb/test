@@ -10,3 +10,7 @@ ssh-keygen -t rsa -b 4096
 
 
   | tee -a /opt/nessus/etc/nessus/nessusd.rules
+
+
+
+https://share.securefuture.com.tr/portal/r/l/e/ab6d2203-f88c-4321-9c53-03d35b9dd156/c3fca58f-64a3-44a9-8326-b7ded0ff0d0f
