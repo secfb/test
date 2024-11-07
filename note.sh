@@ -15,4 +15,3 @@ ssh-keygen -t rsa -b 4096
 202410170946
 
 
-https://share.securefuture.com.tr/portal/r/l/e/dbc045ee-9e0f-4c2e-a3ad-996141e189d9/eb170987-f5e4-4618-9044-5abd7f85e801
