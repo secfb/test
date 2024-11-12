@@ -15,3 +15,8 @@ ssh-keygen -t rsa -b 4096
 202410170946
 
 
+
+Windows Big Size Bulma
+
+
+Get-ChildItem (Get-Location) -Directory | ForEach-Object { [PSCustomObject]@{ FolderPath = $_.FullName; SizeMB = (Get-ChildItem $_.FullName -Recurse | Measure-Object -Property Length -Sum).Sum / 1MB } } | Sort-Object SizeMB -Descending | Format-Table FolderPath, @{Name='Size (MB)'; Expression={"{0:N2}" -f $_.SizeMB}} -AutoSize
