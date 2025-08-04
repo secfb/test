@@ -1,8 +1,12 @@
 import os, time, threading
 from datetime import datetime, timedelta
 
+
+#https://127.0.0.1:8443/#/settings/my-account/api-keys
+
 access_key = "null"
 secret_key = "null"
+
 scan_ids = ["70", "72", "74"]
 nessus_url = "https://127.0.0.1:8443"
 
