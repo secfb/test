@@ -12,14 +12,14 @@ echo "ssh id_rsa.pub" >> ~/.ssh/authorized_keys
 ssh-keygen -t rsa -b 4096
 
 
+cat /opt/nessus/etc/nessus/nessusd.rules
+
   | tee -a /opt/nessus/etc/nessus/nessusd.rules
 
 
 202410170946
 
+nuclei -duc -ni -c 500 -es info,low -etags wordpress,wp-plugin -l httpx.txt -o nuclei-result.txt
 
-
-Windows Big Size
-
-
+Windows Big Size Find
 Get-ChildItem (Get-Location) -Directory | ForEach-Object { [PSCustomObject]@{ FolderPath = $_.FullName; SizeMB = (Get-ChildItem $_.FullName -Recurse | Measure-Object -Property Length -Sum).Sum / 1MB } } | Sort-Object SizeMB -Descending | Format-Table FolderPath, @{Name='Size (MB)'; Expression={"{0:N2}" -f $_.SizeMB}} -AutoSize
