@@ -21,5 +21,8 @@ cat /opt/nessus/etc/nessus/nessusd.rules
 
 nuclei -duc -ni -c 500 -es info,low -etags wordpress,wp-plugin -l httpx.txt -o nuclei-result.txt
 
+python3 nuclei_scheduler.py "nuclei -duc -ni -c 500 -es info,low -etags wordpress,wp-plugin -l httpx.txt -o nuclei-result.txt"
+
 Windows Big Size Find
+
 Get-ChildItem (Get-Location) -Directory | ForEach-Object { [PSCustomObject]@{ FolderPath = $_.FullName; SizeMB = (Get-ChildItem $_.FullName -Recurse | Measure-Object -Property Length -Sum).Sum / 1MB } } | Sort-Object SizeMB -Descending | Format-Table FolderPath, @{Name='Size (MB)'; Expression={"{0:N2}" -f $_.SizeMB}} -AutoSize
